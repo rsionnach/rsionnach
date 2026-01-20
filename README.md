@@ -1,7 +1,7 @@
 <h1 align="center">Hi, I'm Rob 👋</h1>
 
 <p align="center">
-  <strong>SRE • Platform Engineering • Reliability Automation</strong><br/>
+  <strong>Senior SRE • Shift-Left Reliability • Open Source</strong><br/>
   Creator & Maintainer of <a href="https://github.com/rsionnach/nthlayer">NthLayer</a>
 </p>
 
@@ -13,65 +13,49 @@
 
 ---
 
-## ⚡ What I’m Building: NthLayer
+**[NthLayer](https://github.com/rsionnach/nthlayer)** — Shift-left reliability for platform teams.
 
 **NthLayer** is an open-source **Operations-as-Code engine** that generates the entire observability and reliability stack from a single YAML file.
 
-It produces:
+Most reliability decisions happen too late — after deployment, during incidents, in postmortems. NthLayer moves them earlier:
 
-- 📊 Grafana dashboards  
-- 🔔 Prometheus alerting rules  
-- 🎯 SLOs & recording rules  
-- 🧭 Service metadata & runbooks  
-- 🧪 Validated PromQL expressions  
+| Problem | NthLayer Solution |
+|---------|-------------------|
+| SLOs set in isolation | Validate against dependency chains |
+| Alert when budget exhausted | Predict exhaustion with drift detection |
+| Missing metrics found in incidents | Enforce before deployment |
+| "Is this ready?" = opinion | "Is this ready?" = deterministic CI check |
 
-It removes the repetitive operational glue engineers rebuild for every new service, and brings consistency to platform teams through a declarative model.
+```bash
+pip install nthlayer
+nthlayer check-deploy --service payment-api
+```
 
-👉 **Repo:** https://github.com/rsionnach/nthlayer
+**→ [github.com/rsionnach/nthlayer](https://github.com/rsionnach/nthlayer)**
 
 ---
 
-## 🧠 Why I Built It
+## 💡 The Thesis
 
-As an SRE, I’ve seen the same problems repeat across teams:
+Reliability has a timing problem. We've invested heavily in incident response — better alerting, faster recovery, thorough postmortems. But when in a service's lifecycle do we *define* reliability? 
 
-- Every new service starts with no dashboards  
-- Alerts are inconsistent or missing  
-- SLOs are rarely defined early (or correctly)  
-- Observability onboarding is slow and manually-driven  
-- Tribal knowledge dictates reliability practices
+GitHub gave us version control for code. Terraform gave us version control for infrastructure. Security has shift-left. **Reliability should too.**
 
-NthLayer emerged from one belief:
-
-> **Operational readiness should be declarative, repeatable, and automated — not hand-built every time.**
+I wrote about this: **[Shift-Left Reliability](https://dev.to/rsionnach/shift-left-reliability-4poo)**
 
 ---
 
 ## 🔭 Current Work & Focus
 
-- Expanding NthLayer tech stack templates (Redis, MySQL, Kubernetes, etc.)
-- Improving PromQL linting + safety validation  
-- Researching metric discovery patterns  
-- Polishing the CLI workflow (`nthlayer plan/apply`)  
-- Experimenting with AI-assisted SLO recommendations and alert tuning  
+- **Drift detection** — Predict SLO exhaustion before it happens
+- **Dependency intelligence** — Calculate what SLO targets are actually achievable
+- **CI/CD gates** — Block deploys when error budget is exhausted
+- **Metric enforcement** — Validate OpenTelemetry conventions before production
 
 ---
 
-## 🛠️ Technologies & Tools I Work With
+## 📫 Connect
 
-<p>
-  <img src="https://img.shields.io/badge/Prometheus-DA4F35?style=for-the-badge&logo=prometheus&logoColor=white" />
-  <img src="https://img.shields.io/badge/Grafana-F28C28?style=for-the-badge&logo=grafana&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-  <img src="https://img.shields.io/badge/Terraform-5C4EE5?style=for-the-badge&logo=terraform&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />
-</p>
-
----
-
-## 🤝 Let’s Connect
-
-I enjoy collaborating with developers, SREs, platform engineers, and OSS builders.
-
-If you're interested in reliability automation, observability, or dev tooling, feel free to reach out or follow along.
+- **NthLayer:** [github.com/rsionnach/nthlayer](https://github.com/rsionnach/nthlayer)
+- **Article:** [Shift-Left Reliability](https://dev.to/rsionnach/shift-left-reliability-4poo)
+- **LinkedIn:** [rob-fox-29a29024](https://www.linkedin.com/in/rob-fox-29a29024/)
